@@ -1,7 +1,7 @@
 // =============================
 // GLOBAL CONSTANTS
 // =============================
-const userUrl = "http://localhost:3000/users";
+const userUrl = "https://json-server-dlzs.onrender.com/users";
 const API_KEY = "2aec716c";
 
 // Buttons (may not exist on every page, so use optional chaining later)
