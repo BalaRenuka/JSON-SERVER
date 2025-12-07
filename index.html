@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Mania - Login</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5jgbAMA7T-bCL26Q0kVv_4qU9N0fWpe52pw&s">
+</head>
+
+<body class="bg-dark text-light">
+
+  <!-- Loader -->
+  <div class="loader"></div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+  <!-- HEADER -->
+  <header
+    class="header d-flex justify-content-between align-items-center bg-dark p-3 border-bottom border-secondary">
+    <!-- Neon + gradient title -->
+    <h2 class="text-warning fw-bold m-0 neon-title gradient-title">MOVIE MANIA</h2>
+
+    <div class="header-items d-flex gap-2">
+      <button class="btn btn-outline-light fw-bold">
+        <a href="./index.html" class="text-white text-decoration-none">HOME</a>
+      </button>
+
+      <button class="btn btn-outline-primary fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal">
+        LOGIN
+      </button>
+
+      <button class="btn btn-outline-success fw-bold" data-bs-toggle="modal" data-bs-target="#signUpModal">
+        SIGN UP
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main class="container text-center mt-5">
+    <!-- Split-text reveal title -->
+    <h1 class="split-title">
+      <span class="split-line top">
+        <span>WELCOME TO MOVIE MANIA</span>
+      </span>
+      
+     
+    </h1>
+
+    <p class="text-light mt-3">Search movies, explore details, and save your favorites!</p>
+
+    <button class="btn btn-primary mt-3 px-4" data-bs-toggle="modal" data-bs-target="#loginModal">
+      Start Your Journey
+    </button>
+  </main>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+
+        <div class="modal-header">
+          <h3 class="modal-title text-warning"><i class="bi bi-person"></i> User Login</h3>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal" onclick="clearLogData()"></button>
+        </div>
+
+        <div class="modal-body">
+          <label for="loguser" class="form-label">Username</label>
+          <input type="text" id="loguser" class="form-control mb-3" placeholder="Enter username">
+
+          <label for="logpwd" class="form-label">Password</label>
+          <input type="password" id="logpwd" class="form-control" placeholder="Enter password">
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary" id="loginbtn">Login</button>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#signUpModal"
+            onclick="clearLogData()">Sign Up</button>
+          <a href="#" class="text-info ms-3" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal"
+            onclick="clearLogData()">Forgot Password?</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="modal fade" id="signUpModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+
+        <div class="modal-header">
+          <h3 class="modal-title text-success"><i class="bi bi-person-plus"></i> Create Account</h3>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal" onclick="clearSignData()"></button>
+        </div>
+
+        <div class="modal-body">
+          <label class="form-label">Create Username</label>
+          <input type="text" id="signuser" class="form-control mb-3" placeholder="Choose username">
+
+          <label class="form-label">Create Password</label>
+          <input type="password" id="signpwd" class="form-control" placeholder="Choose password">
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-success" id="signbtn">Sign Up</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+            onclick="clearSignData()">Back to Login</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FORGOT PASSWORD MODAL -->
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+
+        <div class="modal-header">
+          <h3 class="modal-title text-info">Forgot Password</h3>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"
+            onclick="clearForgotData()"></button>
+        </div>
+
+        <div class="modal-body">
+          <label class="form-label">Username</label>
+          <input type="text" id="forgotuser" class="form-control mb-3" placeholder="Enter username">
+
+          <label class="form-label">New Password</label>
+          <input type="password" id="forgotpwd" class="form-control" placeholder="Enter new password">
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Back to Login</button>
+          <button class="btn btn-success" id="forgotpwdbtn">Change Password</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

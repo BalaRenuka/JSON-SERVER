@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Search</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light ">
+
+  <!-- Toast Container -->
+  <div class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+  <div class="container mt-3 mb-5">
+
+    <!-- Scroll-triggered title -->
+    <h1 class="text-center fw-bold text-light ">
+      Welcome to Movie Mania
+    </h1>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <h4 id="userName" class="text-light"></h4>
+      <div>
+        <button class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#favModal"
+          onclick="displayFavorites()">
+          View Favorites
+        </button>
+
+        <button class="btn btn-danger" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Search Movies -->
+    <div class="d-flex gap-3 justify-content-center mt-3">
+      <input type="text" id="searchInput" class="form-control w-50" placeholder="Search Movies...">
+      <button class="btn btn-primary" onclick="searchMovies()">Search</button>
+    </div>
+
+    <!-- Search Results -->
+    <h3 class="mt-4 text-center text-light fw-bold">Search Results</h3>
+    <div id="movieResults" class="d-flex flex-wrap gap-3 justify-content-center"></div>
+
+    <!-- Favorites Modal -->
+    <div class="modal fade" id="favModal">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h3>Your Favorites</h3>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body" id="favList"></div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
